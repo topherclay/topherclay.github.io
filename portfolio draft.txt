@@ -1,0 +1,62 @@
+
+
+
+raspberrypi motion activated camera.
+	desc:
+		For this project I wrote a script to read from a usb camera connected to a raspberry pi. The script controlled how often to use the camera, only leaving it on to record when motion was detected. This allowed me to point the camera out of my living room window and log the individual events where people or cars crossed in front of my front yard. 
+	tools:
+		This project used the OpenCV python library to interact with the camera output.
+		A raspberry pi connected to a usb camera.
+	things I learned:
+		memory management on a limited system. 
+		OpenCV library with video.
+		a fun motion detection algorithm.
+
+laptop wifi wardriving
+	desc:
+		I used a wifi adapter dongle to track IEEE 802.11 data between nearby cellphones and wifi devices. 
+	tools:
+		This project relied heavily on WireShark. 
+	things i learned:
+		How to read WireShark capture logs. 
+
+Wordle results database
+	desc:
+		This script runs a chatbot that sits in a Discord chat channel and parses messages posted in that channnel to determine if they are copy-pasted Wordle results. It takes those results and updates a database table which can then be queried by the users with a collection of chatbot commands to compare their Wordle statistics. 
+	tools:
+		a small mysql database hosted on the same machine as the script. 
+		the SQLAlchemy library as the ORM between the chatbot and the database
+		discord.py to handle the chatbot and the Discord API
+	Things I learned:
+		This project gave me a much better understanding of SQL and also of the proper ways to handle the async interactions between a database and a chatbot.
+
+image splitter 
+	desc:
+		This script takes an image and tries to find the best line for dividing that image into two regions where the two regions have the largest possible difference in color. This effectively results in the most natural "horizon" of any given image, where in the case of an actual landscape photo the best line is the actual horizon. 
+	tools:
+		opencv-python for the image parsing, and CIELAB colorspace to determine distance between colors and most closely percieved by human vision. 
+	What I learned:
+		Because this project worked with variable sized image files, this was the first time I personally had to consider the "big O complexity" of the algorithms I chose. I believe I started to run into the limitations of doing media processing on an interpretated language such as python. 
+	examples:
+		https://imgur.com/a/image-splits-wJeOqwr
+
+family average location
+	desc:
+		This script parses a .cvs file of names and gps locations and then finds the average location that is roughly in the center of those names as interpretted by the WGS 84 geodesic standard. 
+	tools:
+		the pygeodesy library for manipulating GIS data. 
+		the folium library for the openstreet map visualizations.  
+	what I learned:
+		Even though python is not a front end language, I learned that I could still leverage some simple javascript wrapper libraries to get a lot of easy data visualization in a web browser. 
+
+
+Lyrics searcher
+	desc:
+		This project uses a regex string input to search a musicians discography and output all the albums, tracks, and surrounding lines that match the expression, organizing them into a .cvs so that you can track any reoccuring lyrical motifs across an artists career. 
+	tools:
+		regex for the pattern matching
+		the Pandas python library for modelling the data before exporting to .cvs
+		the BeautifulSoup library along with Requests for webscraping the lyrics.
+	what I learned:
+		This was my first project using automated http GET requests so this is where I learned proper ettiquette for mass webscraping. This is also where I first really made use of regex.   
+
